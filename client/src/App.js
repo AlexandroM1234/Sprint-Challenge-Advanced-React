@@ -21,11 +21,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         {this.state.players.map(player => {
           return <PlayerCard players={player} />;
         })}
-      </div>
+      </>
     );
   }
 }
