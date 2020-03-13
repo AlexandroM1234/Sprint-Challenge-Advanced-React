@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
+import PlayerCard from "./components/playerCard";
 
 class App extends React.Component {
   constructor() {
@@ -15,7 +16,6 @@ class App extends React.Component {
       this.setState({
         players: response.data
       });
-      // console.log(this.state.players);
     });
   }
 
@@ -23,13 +23,7 @@ class App extends React.Component {
     return (
       <div>
         {this.state.players.map(player => {
-          return (
-            <div>
-              <p>{player.name}</p>
-              <p>{player.country}</p>
-              <p>{player.searches}</p>
-            </div>
-          );
+          return <PlayerCard players={player} />;
         })}
       </div>
     );
